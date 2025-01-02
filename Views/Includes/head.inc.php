@@ -49,7 +49,7 @@ $siteName = Website::getWebsiteName();
 
 
     <!-- Theme style -->
-    <link rel="stylesheet" type="text/css" href="<?= EnvManager::getInstance()->getValue('PATH_SUBFOLDER') ?>Public/Themes/Tailwind/Assets/Css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?= EnvManager::getInstance()->getValue('PATH_SUBFOLDER') ?>Public/Themes/<?= ThemeManager::getInstance()->getCurrentTheme()->name() ?>/Assets/Css/style.css">
     <link rel="stylesheet" href="<?= EnvManager::getInstance()->getValue('PATH_SUBFOLDER') ?>Admin/Resources/Vendors/Fontawesome-free/Css/fa-all.min.css">
 
     <?= ImagesManager::getFaviconInclude() ?>
@@ -58,7 +58,7 @@ $siteName = Website::getWebsiteName();
         View::loadInclude($includes, 'styles');
     ?>
 
-    <script src="<?= EnvManager::getInstance()->getValue('PATH_SUBFOLDER') ?>Public/Themes/Tailwind/Assets/Js/flowbite.js"></script>
+    <script src="<?= EnvManager::getInstance()->getValue('PATH_SUBFOLDER') ?>Public/Themes/<?= ThemeManager::getInstance()->getCurrentTheme()->name() ?>/Assets/Js/flowbite.js"></script>
 
     <!--A UTILISER UNIQUEMENT SI ON VEUT LE SWITCH LIGHT / DARK
     <script>
