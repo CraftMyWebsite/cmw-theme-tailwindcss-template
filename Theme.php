@@ -4,7 +4,6 @@ namespace CMW\Theme\Tailwind;
 
 use CMW\Manager\Env\EnvManager;
 use CMW\Manager\Theme\IThemeConfig;
-use CMW\Manager\Theme\ThemeManager;
 
 class Theme implements IThemeConfig
 {
@@ -56,6 +55,6 @@ class Theme implements IThemeConfig
 
     public function imageLink(): ?string
     {
-        return EnvManager::getInstance()->getValue('PATH_SUBFOLDER').'Public/Themes/'.ThemeManager::getInstance()->getCurrentTheme()->name().'/Assets/default.png';
+        return EnvManager::getInstance()->getValue('PATH_SUBFOLDER').'Public/Themes/'.$this->name().'/Assets/default.png';
     }
 }
