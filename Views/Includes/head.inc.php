@@ -75,8 +75,8 @@ $siteName = Website::getWebsiteName();
 <style>
 
     :root {
-        --bg-color: <?= ThemeModel::getInstance()->fetchConfigValue('main_color')?>;
-        --text-color: <?= ThemeModel::getInstance()->fetchConfigValue('text_color')?>;
+        --bg-color: <?= ThemeModel::getInstance()->fetchConfigValue('global','main_color')?>;
+        --text-color: <?= ThemeModel::getInstance()->fetchConfigValue('global','text_color')?>;
     }
 
     @font-face {  font-family: angkor;  src:url("<?= EnvManager::getInstance()->getValue('PATH_SUBFOLDER') ?>Public/Themes/<?= ThemeLoader::getInstance()->getCurrentTheme()->name() ?>/Assets/Webfonts/Angkor-Regular.ttf");  }
@@ -124,7 +124,7 @@ $siteName = Website::getWebsiteName();
     @font-face {  font-family: silkscreen;  src:url("<?= EnvManager::getInstance()->getValue('PATH_SUBFOLDER') ?>Public/Themes/<?= ThemeLoader::getInstance()->getCurrentTheme()->name() ?>/Assets/Webfonts/Silkscreen-Regular.ttf");  }
 </style>
 
-<body class="bg-main text-color font-<?= ThemeModel::getInstance()->fetchConfigValue('main_font') ?> flex flex-col min-h-screen">
+<body class="bg-main text-color font-<?= ThemeModel::getInstance()->fetchConfigValue('global','main_font') ?> flex flex-col min-h-screen">
 
 <?php
 View::loadInclude($includes, 'beforeScript');
